@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna Reviews Movies</title>
+  <meta name="description" content="A minimal movie review archive with over 100 reviews dating back to 2021." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero">
+      <div class="hero__top">
+        <p class="eyebrow">Anna Reviews Movies</p>
+        <p class="meta-pill">120 reviews • archive since 2021</p>
+      </div>
+      <h1>A calm little archive of films worth talking about.</h1>
+      <p class="hero__copy">Short reviews, simple ratings, and a growing watch history — organized in one clean place.</p>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span class="stat-label">Reviews</span>
+        <strong id="stat-count">120</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Archive starts</span>
+        <strong>2021</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Latest entry</span>
+        <strong id="stat-latest">2026</strong>
+      </article>
+    </section>
+
+    <section class="controls">
+      <div class="control-group search-group">
+        <label for="search">Search</label>
+        <input id="search" type="search" placeholder="Title or phrase" />
+      </div>
+
+      <div class="control-group">
+        <label for="yearFilter">Year</label>
+        <select id="yearFilter">
+          <option value="all">All years</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="sortBy">Sort</label>
+        <select id="sortBy">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="highest">Highest rated</option>
+          <option value="lowest">Lowest rated</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="featured" id="featuredCard">
+      <div class="featured__label">Featured review</div>
+      <h2 id="featuredTitle">Loading…</h2>
+      <p id="featuredText"></p>
+      <div class="featured__meta" id="featuredMeta"></div>
+    </section>
+
+    <section class="results-bar">
+      <p id="resultsText">Showing all reviews</p>
+    </section>
+
+    <main id="reviewsGrid" class="reviews-grid"></main>
+
+    <footer class="site-footer">
+      <p>Built as a static GitHub Pages site. Minimal by choice.</p>
+    </footer>
+  </div>
+
+  <script src="reviews.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

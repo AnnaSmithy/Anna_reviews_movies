@@ -1,1562 +1,1135 @@
-const REVIEWS = [
+window.REVIEWS = [
   {
-    "title": "Mulholland Drive",
-    "slug": "mulholland-drive",
-    "rating": 7.0,
-    "date": "2026-03-01",
-    "year": 2026,
-    "review": "Not flawless, but deeply watchable. The pacing is steadier than I expected. I liked how the film leaves a little space for the audience.",
-    "runtime": 102,
-    "tags": [
-      "Action",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Lost in Translation",
-    "slug": "lost-in-translation",
-    "rating": 9.5,
-    "date": "2026-02-13",
-    "year": 2026,
-    "review": "A very strong watch. The emotional beats feel earned rather than forced. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 131,
-    "tags": [
-      "Mystery",
-      "Romance"
-    ]
-  },
-  {
-    "title": "The Departed",
-    "slug": "the-departed",
-    "rating": 8.0,
-    "date": "2026-01-28",
-    "year": 2026,
-    "review": "A melancholic film where the direction keeps everything elegantly controlled. The central idea is clear without becoming simplistic.",
-    "runtime": 102,
-    "tags": [
-      "Mystery",
-      "Crime"
-    ]
-  },
-  {
-    "title": "The Revenant",
-    "slug": "the-revenant",
-    "rating": 8.5,
-    "date": "2026-01-13",
-    "year": 2026,
-    "review": "A funny film where the direction keeps everything elegantly controlled. The movie feels confident without showing off.",
-    "runtime": 109,
-    "tags": [
-      "Comedy",
-      "Thriller"
-    ]
-  },
-  {
-    "title": "Spotlight",
-    "slug": "spotlight",
-    "rating": 6.5,
-    "date": "2025-12-28",
-    "year": 2025,
-    "review": "Not flawless, but deeply watchable. It is far more intimate than its premise suggests. The movie feels confident without showing off.",
-    "runtime": 117,
-    "tags": [
-      "Arthouse",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Birdman",
-    "slug": "birdman",
-    "rating": 7.5,
-    "date": "2025-12-12",
-    "year": 2025,
-    "review": "A very strong watch. Its performances do most of the heavy lifting. It never loses sight of the characters beneath the concept.",
-    "runtime": 138,
-    "tags": [
-      "Crime",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Roma",
-    "slug": "roma",
-    "rating": 6.5,
-    "date": "2025-11-26",
-    "year": 2025,
-    "review": "I admired how it is far more intimate than its premise suggests. I liked how the film leaves a little space for the audience.",
-    "runtime": 102,
-    "tags": [
-      "Crime",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Capernaum",
-    "slug": "capernaum",
-    "rating": 9.0,
-    "date": "2025-11-11",
-    "year": 2025,
-    "review": "A very strong watch. The emotional beats feel earned rather than forced. I liked how the film leaves a little space for the audience.",
-    "runtime": 152,
-    "tags": [
-      "Mystery",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "The Lives of Others",
-    "slug": "the-lives-of-others",
-    "rating": 9.5,
-    "date": "2025-10-26",
-    "year": 2025,
-    "review": "I admired how the writing quietly sneaks up on you. It is the kind of movie that improves once you sit with it.",
-    "runtime": 95,
-    "tags": [
-      "Action",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "Paris, Texas",
-    "slug": "paris-texas",
-    "rating": 6.5,
-    "date": "2025-10-10",
-    "year": 2025,
-    "review": "Not flawless, but deeply watchable. Every scene feels deliberately shaped. It never loses sight of the characters beneath the concept.",
-    "runtime": 102,
-    "tags": [
-      "Arthouse",
-      "Romance"
-    ]
-  },
-  {
-    "title": "In the Mood for Love",
-    "slug": "in-the-mood-for-love",
-    "rating": 8.0,
-    "date": "2025-09-24",
-    "year": 2025,
-    "review": "A patient film where it is far more intimate than its premise suggests. The movie feels confident without showing off.",
-    "runtime": 117,
-    "tags": [
-      "Sci-Fi",
-      "Crime"
-    ]
-  },
-  {
-    "title": "Yi Yi",
-    "slug": "yi-yi",
-    "rating": 7.0,
-    "date": "2025-09-08",
-    "year": 2025,
-    "review": "A very strong watch. The writing quietly sneaks up on you. I would happily revisit it for the craft alone.",
-    "runtime": 124,
-    "tags": [
-      "Sci-Fi",
-      "Drama"
-    ]
-  },
-  {
-    "title": "Chungking Express",
-    "slug": "chungking-express",
-    "rating": 6.5,
-    "date": "2025-08-24",
-    "year": 2025,
-    "review": "Not flawless, but deeply watchable. It is far more intimate than its premise suggests. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 152,
-    "tags": [
-      "Romance",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Amélie",
-    "slug": "am-lie",
-    "rating": 8.0,
-    "date": "2025-08-08",
-    "year": 2025,
-    "review": "This one is sharp in the best way: focused, clear, and emotionally direct. I liked how the film leaves a little space for the audience.",
-    "runtime": 145,
-    "tags": [
-      "Sci-Fi",
-      "Action"
-    ]
-  },
-  {
-    "title": "The Green Knight",
-    "slug": "the-green-knight",
-    "rating": 8.0,
-    "date": "2025-07-23",
-    "year": 2025,
-    "review": "A intense film where it balances style and substance unusually well. I would happily revisit it for the craft alone.",
-    "runtime": 152,
-    "tags": [
-      "Sci-Fi",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "First Reformed",
-    "slug": "first-reformed",
-    "rating": 8.5,
-    "date": "2025-07-07",
-    "year": 2025,
-    "review": "This one is precise in the best way: focused, clear, and emotionally direct. It looks beautiful without becoming empty.",
-    "runtime": 124,
-    "tags": [
-      "Thriller",
-      "Classic"
-    ]
-  },
-  {
-    "title": "The Favourite",
-    "slug": "the-favourite",
-    "rating": 9.5,
-    "date": "2025-06-21",
-    "year": 2025,
-    "review": "Not flawless, but deeply watchable. The final act lands with surprising force. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 95,
-    "tags": [
-      "Sci-Fi",
-      "Action"
-    ]
-  },
-  {
-    "title": "The Lobster",
-    "slug": "the-lobster",
-    "rating": 7.5,
-    "date": "2025-06-06",
-    "year": 2025,
-    "review": "Not flawless, but deeply watchable. It is far more intimate than its premise suggests. The central idea is clear without becoming simplistic.",
-    "runtime": 102,
-    "tags": [
-      "Mystery",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "Midsommar",
-    "slug": "midsommar",
-    "rating": 7.5,
-    "date": "2025-05-21",
-    "year": 2025,
-    "review": "I admired how it trusts silence more than exposition. The movie feels confident without showing off.",
-    "runtime": 145,
-    "tags": [
-      "Romance",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Hereditary",
-    "slug": "hereditary",
-    "rating": 8.0,
-    "date": "2025-05-05",
-    "year": 2025,
-    "review": "This one is sharp in the best way: focused, clear, and emotionally direct. It never loses sight of the characters beneath the concept.",
-    "runtime": 138,
-    "tags": [
-      "Thriller",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "Nightcrawler",
-    "slug": "nightcrawler",
-    "rating": 9.5,
-    "date": "2025-04-19",
-    "year": 2025,
-    "review": "I admired how the emotional beats feel earned rather than forced. The central idea is clear without becoming simplistic.",
-    "runtime": 124,
-    "tags": [
-      "Sci-Fi",
-      "Crime"
-    ]
-  },
-  {
-    "title": "Gone Girl",
-    "slug": "gone-girl",
-    "rating": 9.0,
-    "date": "2025-04-04",
-    "year": 2025,
-    "review": "A very strong watch. The direction keeps everything elegantly controlled. It never loses sight of the characters beneath the concept.",
-    "runtime": 109,
-    "tags": [
-      "Thriller",
-      "Mystery"
-    ]
-  },
-  {
-    "title": "The Master",
-    "slug": "the-master",
-    "rating": 7.0,
-    "date": "2025-03-19",
-    "year": 2025,
-    "review": "I admired how the writing quietly sneaks up on you. The soundtrack is used sparingly and effectively.",
-    "runtime": 152,
-    "tags": [
-      "Comedy",
-      "Mystery"
-    ]
-  },
-  {
-    "title": "Incendies",
-    "slug": "incendies",
-    "rating": 8.0,
-    "date": "2025-03-03",
-    "year": 2025,
-    "review": "Not flawless, but deeply watchable. It trusts silence more than exposition. It is the kind of movie that improves once you sit with it.",
-    "runtime": 117,
-    "tags": [
-      "Comedy",
-      "Mystery"
-    ]
-  },
-  {
-    "title": "A Separation",
-    "slug": "a-separation",
-    "rating": 8.0,
-    "date": "2025-02-15",
-    "year": 2025,
-    "review": "I admired how the pacing is steadier than I expected. The central idea is clear without becoming simplistic.",
-    "runtime": 138,
-    "tags": [
-      "Romance",
-      "Classic"
-    ]
-  },
-  {
-    "title": "The Tree of Life",
-    "slug": "the-tree-of-life",
-    "rating": 9.5,
-    "date": "2025-01-30",
-    "year": 2025,
-    "review": "This one is intense in the best way: focused, clear, and emotionally direct. I would happily revisit it for the craft alone.",
-    "runtime": 109,
-    "tags": [
-      "Comedy",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "Black Swan",
-    "slug": "black-swan",
-    "rating": 6.5,
-    "date": "2025-01-15",
-    "year": 2025,
-    "review": "I admired how the writing quietly sneaks up on you. It is the kind of movie that improves once you sit with it.",
-    "runtime": 102,
-    "tags": [
-      "Drama",
-      "Action"
-    ]
-  },
-  {
-    "title": "Blue Valentine",
-    "slug": "blue-valentine",
-    "rating": 7.0,
-    "date": "2024-12-30",
-    "year": 2024,
-    "review": "A very strong watch. The emotional beats feel earned rather than forced. The smaller moments are what make it memorable.",
-    "runtime": 124,
-    "tags": [
-      "Action",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "Frances Ha",
-    "slug": "frances-ha",
-    "rating": 8.0,
-    "date": "2024-12-14",
-    "year": 2024,
-    "review": "A very strong watch. The emotional beats feel earned rather than forced. It never loses sight of the characters beneath the concept.",
-    "runtime": 124,
-    "tags": [
-      "Mystery",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "Inside Llewyn Davis",
-    "slug": "inside-llewyn-davis",
-    "rating": 6.5,
-    "date": "2024-11-28",
-    "year": 2024,
-    "review": "A very strong watch. The emotional beats feel earned rather than forced. I would happily revisit it for the craft alone.",
-    "runtime": 152,
-    "tags": [
-      "Romance",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Carol",
-    "slug": "carol",
-    "rating": 9.0,
-    "date": "2024-11-13",
-    "year": 2024,
-    "review": "A very strong watch. It balances style and substance unusually well. It never loses sight of the characters beneath the concept.",
-    "runtime": 117,
-    "tags": [
-      "Drama",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Room",
-    "slug": "room",
-    "rating": 7.5,
-    "date": "2024-10-28",
-    "year": 2024,
-    "review": "I admired how every scene feels deliberately shaped. It never loses sight of the characters beneath the concept.",
-    "runtime": 95,
-    "tags": [
-      "Mystery",
-      "Thriller"
-    ]
-  },
-  {
-    "title": "Manchester by the Sea",
-    "slug": "manchester-by-the-sea",
-    "rating": 9.5,
-    "date": "2024-10-12",
-    "year": 2024,
-    "review": "I admired how its performances do most of the heavy lifting. The central idea is clear without becoming simplistic.",
-    "runtime": 124,
-    "tags": [
-      "Crime",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "The Florida Project",
-    "slug": "the-florida-project",
-    "rating": 7.5,
-    "date": "2024-09-26",
-    "year": 2024,
-    "review": "Not flawless, but deeply watchable. Its performances do most of the heavy lifting. I would happily revisit it for the craft alone.",
-    "runtime": 117,
-    "tags": [
-      "Thriller",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Call Me by Your Name",
-    "slug": "call-me-by-your-name",
-    "rating": 6.5,
-    "date": "2024-09-10",
-    "year": 2024,
-    "review": "This one is melancholic in the best way: focused, clear, and emotionally direct. It looks beautiful without becoming empty.",
-    "runtime": 124,
-    "tags": [
-      "Crime",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Phantom Thread",
-    "slug": "phantom-thread",
-    "rating": 8.0,
-    "date": "2024-08-26",
-    "year": 2024,
-    "review": "Not flawless, but deeply watchable. The writing quietly sneaks up on you. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 138,
-    "tags": [
-      "Comedy",
-      "Action"
-    ]
-  },
-  {
-    "title": "Once Upon a Time in Hollywood",
-    "slug": "once-upon-a-time-in-hollywood",
-    "rating": 9.0,
-    "date": "2024-08-10",
-    "year": 2024,
-    "review": "I admired how its performances do most of the heavy lifting. The smaller moments are what make it memorable.",
-    "runtime": 138,
-    "tags": [
-      "Drama",
-      "Action"
-    ]
-  },
-  {
-    "title": "Glass Onion",
-    "slug": "glass-onion",
-    "rating": 7.5,
-    "date": "2024-07-25",
-    "year": 2024,
-    "review": "Not flawless, but deeply watchable. It balances style and substance unusually well. The central idea is clear without becoming simplistic.",
-    "runtime": 131,
-    "tags": [
-      "Action",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Knives Out",
-    "slug": "knives-out",
-    "rating": 6.5,
-    "date": "2024-07-09",
-    "year": 2024,
-    "review": "This one is tender in the best way: focused, clear, and emotionally direct. It never loses sight of the characters beneath the concept.",
-    "runtime": 117,
-    "tags": [
-      "Comedy",
-      "Drama"
-    ]
-  },
-  {
-    "title": "The Lighthouse",
-    "slug": "the-lighthouse",
-    "rating": 9.5,
-    "date": "2024-06-24",
-    "year": 2024,
-    "review": "A sharp film where every scene feels deliberately shaped. The smaller moments are what make it memorable.",
-    "runtime": 131,
-    "tags": [
-      "Drama",
-      "Action"
-    ]
-  },
-  {
-    "title": "Uncut Gems",
-    "slug": "uncut-gems",
-    "rating": 7.0,
-    "date": "2024-06-08",
-    "year": 2024,
-    "review": "Not flawless, but deeply watchable. The writing quietly sneaks up on you. It looks beautiful without becoming empty.",
-    "runtime": 102,
-    "tags": [
-      "Action",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Promising Young Woman",
-    "slug": "promising-young-woman",
-    "rating": 9.5,
-    "date": "2024-05-23",
-    "year": 2024,
-    "review": "I admired how it balances style and substance unusually well. I would happily revisit it for the craft alone.",
-    "runtime": 131,
-    "tags": [
-      "Mystery",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "Minari",
-    "slug": "minari",
-    "rating": 9.0,
-    "date": "2024-05-07",
-    "year": 2024,
-    "review": "A gorgeous film where the pacing is steadier than I expected. I would happily revisit it for the craft alone.",
-    "runtime": 102,
-    "tags": [
-      "Drama",
-      "Crime"
-    ]
+    "title": "The Father",
+    "release_date": "2021-02-26",
+    "review_date": "2021-04-03",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 7.6,
+    "review": "The Father is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. The Father knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Father a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Father is excellent and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 463
   },
   {
     "title": "Nomadland",
-    "slug": "nomadland",
-    "rating": 7.0,
-    "date": "2024-04-21",
-    "year": 2024,
-    "review": "Not flawless, but deeply watchable. The direction keeps everything elegantly controlled. It looks beautiful without becoming empty.",
-    "runtime": 117,
-    "tags": [
-      "Comedy",
-      "Crime"
-    ]
-  },
-  {
-    "title": "Another Round",
-    "slug": "another-round",
-    "rating": 9.0,
-    "date": "2024-04-06",
-    "year": 2024,
-    "review": "A restless film where it is far more intimate than its premise suggests. It never loses sight of the characters beneath the concept.",
-    "runtime": 152,
-    "tags": [
-      "Arthouse",
-      "Mystery"
-    ]
-  },
-  {
-    "title": "Licorice Pizza",
-    "slug": "licorice-pizza",
-    "rating": 7.0,
-    "date": "2024-03-21",
-    "year": 2024,
-    "review": "I admired how the pacing is steadier than I expected. I liked how the film leaves a little space for the audience.",
-    "runtime": 138,
-    "tags": [
-      "Romance",
-      "Crime"
-    ]
-  },
-  {
-    "title": "Top Gun: Maverick",
-    "slug": "top-gun-maverick",
-    "rating": 6.5,
-    "date": "2024-03-05",
-    "year": 2024,
-    "review": "Not flawless, but deeply watchable. The pacing is steadier than I expected. The soundtrack is used sparingly and effectively.",
-    "runtime": 95,
-    "tags": [
-      "Comedy",
-      "Classic"
-    ]
-  },
-  {
-    "title": "The Batman",
-    "slug": "the-batman",
-    "rating": 7.0,
-    "date": "2024-02-18",
-    "year": 2024,
-    "review": "Not flawless, but deeply watchable. It balances style and substance unusually well. The movie feels confident without showing off.",
-    "runtime": 152,
-    "tags": [
-      "Action",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Oppenheimer",
-    "slug": "oppenheimer",
-    "rating": 7.5,
-    "date": "2024-02-02",
-    "year": 2024,
-    "review": "A very strong watch. The final act lands with surprising force. The smaller moments are what make it memorable.",
-    "runtime": 124,
-    "tags": [
-      "Thriller",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Barbie",
-    "slug": "barbie",
-    "rating": 6.5,
-    "date": "2024-01-18",
-    "year": 2024,
-    "review": "Not flawless, but deeply watchable. It balances style and substance unusually well. The soundtrack is used sparingly and effectively.",
-    "runtime": 152,
-    "tags": [
-      "Thriller",
-      "Mystery"
-    ]
-  },
-  {
-    "title": "Killers of the Flower Moon",
-    "slug": "killers-of-the-flower-moon",
-    "rating": 7.5,
-    "date": "2024-01-02",
-    "year": 2024,
-    "review": "This one is patient in the best way: focused, clear, and emotionally direct. The movie feels confident without showing off.",
-    "runtime": 102,
-    "tags": [
-      "Drama",
-      "Romance"
-    ]
-  },
-  {
-    "title": "All of Us Strangers",
-    "slug": "all-of-us-strangers",
-    "rating": 7.0,
-    "date": "2023-12-17",
-    "year": 2023,
-    "review": "A very strong watch. It trusts silence more than exposition. The smaller moments are what make it memorable.",
-    "runtime": 102,
-    "tags": [
-      "Mystery",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "The Zone of Interest",
-    "slug": "the-zone-of-interest",
-    "rating": 9.5,
-    "date": "2023-12-01",
-    "year": 2023,
-    "review": "I admired how it is far more intimate than its premise suggests. It looks beautiful without becoming empty.",
-    "runtime": 117,
-    "tags": [
-      "Comedy",
-      "Action"
-    ]
-  },
-  {
-    "title": "Poor Things",
-    "slug": "poor-things",
-    "rating": 8.0,
-    "date": "2023-11-16",
-    "year": 2023,
-    "review": "I admired how the final act lands with surprising force. The movie feels confident without showing off.",
-    "runtime": 124,
-    "tags": [
-      "Classic",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Saltburn",
-    "slug": "saltburn",
-    "rating": 7.5,
-    "date": "2023-10-31",
-    "year": 2023,
-    "review": "I admired how the emotional beats feel earned rather than forced. I liked how the film leaves a little space for the audience.",
-    "runtime": 124,
-    "tags": [
-      "Action",
-      "Classic"
-    ]
-  },
-  {
-    "title": "May December",
-    "slug": "may-december",
-    "rating": 8.5,
-    "date": "2023-10-15",
-    "year": 2023,
-    "review": "I admired how the final act lands with surprising force. I liked how the film leaves a little space for the audience.",
-    "runtime": 95,
-    "tags": [
-      "Thriller",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Civil War",
-    "slug": "civil-war",
-    "rating": 9.0,
-    "date": "2023-09-29",
-    "year": 2023,
-    "review": "A tender film where it balances style and substance unusually well. The smaller moments are what make it memorable.",
-    "runtime": 131,
-    "tags": [
-      "Sci-Fi",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "Challengers",
-    "slug": "challengers",
-    "rating": 7.0,
-    "date": "2023-09-13",
-    "year": 2023,
-    "review": "I admired how it trusts silence more than exposition. I liked how the film leaves a little space for the audience.",
-    "runtime": 95,
-    "tags": [
-      "Sci-Fi",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Anatomy of a Fall",
-    "slug": "anatomy-of-a-fall",
-    "rating": 7.5,
-    "date": "2023-08-29",
-    "year": 2023,
-    "review": "This one is gorgeous in the best way: focused, clear, and emotionally direct. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 117,
-    "tags": [
-      "Action",
-      "Romance"
-    ]
-  },
-  {
-    "title": "The Holdovers",
-    "slug": "the-holdovers",
-    "rating": 9.0,
-    "date": "2023-08-13",
-    "year": 2023,
-    "review": "Not flawless, but deeply watchable. It trusts silence more than exposition. The soundtrack is used sparingly and effectively.",
-    "runtime": 138,
-    "tags": [
-      "Drama",
-      "Action"
-    ]
-  },
-  {
-    "title": "Perfect Days",
-    "slug": "perfect-days",
-    "rating": 8.5,
-    "date": "2023-07-28",
-    "year": 2023,
-    "review": "This one is melancholic in the best way: focused, clear, and emotionally direct. I would happily revisit it for the craft alone.",
-    "runtime": 109,
-    "tags": [
-      "Crime",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Shoplifters",
-    "slug": "shoplifters",
-    "rating": 7.5,
-    "date": "2023-07-12",
-    "year": 2023,
-    "review": "A very strong watch. The pacing is steadier than I expected. It never loses sight of the characters beneath the concept.",
-    "runtime": 95,
-    "tags": [
-      "Drama",
-      "Action"
-    ]
-  },
-  {
-    "title": "Decision to Leave",
-    "slug": "decision-to-leave",
-    "rating": 9.0,
-    "date": "2023-06-27",
-    "year": 2023,
-    "review": "Not flawless, but deeply watchable. It is far more intimate than its premise suggests. The smaller moments are what make it memorable.",
-    "runtime": 95,
-    "tags": [
-      "Classic",
-      "Drama"
-    ]
-  },
-  {
-    "title": "Burning",
-    "slug": "burning",
-    "rating": 9.0,
-    "date": "2023-06-11",
-    "year": 2023,
-    "review": "A very strong watch. It trusts silence more than exposition. It never loses sight of the characters beneath the concept.",
-    "runtime": 152,
-    "tags": [
-      "Crime",
-      "Thriller"
-    ]
-  },
-  {
-    "title": "The Handmaiden",
-    "slug": "the-handmaiden",
-    "rating": 9.0,
-    "date": "2023-05-26",
-    "year": 2023,
-    "review": "Not flawless, but deeply watchable. The pacing is steadier than I expected. It looks beautiful without becoming empty.",
-    "runtime": 145,
-    "tags": [
-      "Arthouse",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "Memories of Murder",
-    "slug": "memories-of-murder",
-    "rating": 6.5,
-    "date": "2023-05-10",
-    "year": 2023,
-    "review": "I admired how it trusts silence more than exposition. I would happily revisit it for the craft alone.",
-    "runtime": 95,
-    "tags": [
-      "Action",
-      "Thriller"
-    ]
-  },
-  {
-    "title": "Oldboy",
-    "slug": "oldboy",
-    "rating": 9.5,
-    "date": "2023-04-24",
-    "year": 2023,
-    "review": "I admired how it balances style and substance unusually well. It is the kind of movie that improves once you sit with it.",
-    "runtime": 117,
-    "tags": [
-      "Classic",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Pan's Labyrinth",
-    "slug": "pan-s-labyrinth",
-    "rating": 7.0,
-    "date": "2023-04-09",
-    "year": 2023,
-    "review": "This one is restrained in the best way: focused, clear, and emotionally direct. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 124,
-    "tags": [
-      "Romance",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Children of Men",
-    "slug": "children-of-men",
-    "rating": 9.5,
-    "date": "2023-03-24",
-    "year": 2023,
-    "review": "I admired how it trusts silence more than exposition. The soundtrack is used sparingly and effectively.",
-    "runtime": 102,
-    "tags": [
-      "Sci-Fi",
-      "Classic"
-    ]
-  },
-  {
-    "title": "The Prestige",
-    "slug": "the-prestige",
-    "rating": 9.5,
-    "date": "2023-03-08",
-    "year": 2023,
-    "review": "This one is patient in the best way: focused, clear, and emotionally direct. The smaller moments are what make it memorable.",
-    "runtime": 145,
-    "tags": [
-      "Sci-Fi",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Memento",
-    "slug": "memento",
-    "rating": 9.5,
-    "date": "2023-02-20",
-    "year": 2023,
-    "review": "I admired how it is far more intimate than its premise suggests. It is the kind of movie that improves once you sit with it.",
-    "runtime": 117,
-    "tags": [
-      "Comedy",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Interstellar",
-    "slug": "interstellar",
-    "rating": 8.0,
-    "date": "2023-02-05",
-    "year": 2023,
-    "review": "Not flawless, but deeply watchable. Its performances do most of the heavy lifting. It is the kind of movie that improves once you sit with it.",
-    "runtime": 131,
-    "tags": [
-      "Drama",
-      "Thriller"
-    ]
-  },
-  {
-    "title": "The Matrix",
-    "slug": "the-matrix",
-    "rating": 7.5,
-    "date": "2023-01-20",
-    "year": 2023,
-    "review": "A very strong watch. The writing quietly sneaks up on you. The movie feels confident without showing off.",
-    "runtime": 124,
-    "tags": [
-      "Drama",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "Fight Club",
-    "slug": "fight-club",
-    "rating": 7.0,
-    "date": "2023-01-04",
-    "year": 2023,
-    "review": "Not flawless, but deeply watchable. The emotional beats feel earned rather than forced. It never loses sight of the characters beneath the concept.",
-    "runtime": 95,
-    "tags": [
-      "Crime",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Se7en",
-    "slug": "se7en",
-    "rating": 8.0,
-    "date": "2022-12-19",
-    "year": 2022,
-    "review": "Not flawless, but deeply watchable. The writing quietly sneaks up on you. The central idea is clear without becoming simplistic.",
-    "runtime": 95,
-    "tags": [
-      "Thriller",
-      "Drama"
-    ]
-  },
-  {
-    "title": "The Silence of the Lambs",
-    "slug": "the-silence-of-the-lambs",
-    "rating": 8.0,
-    "date": "2022-12-03",
-    "year": 2022,
-    "review": "A very strong watch. It trusts silence more than exposition. I liked how the film leaves a little space for the audience.",
-    "runtime": 145,
-    "tags": [
-      "Thriller",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "Aliens",
-    "slug": "aliens",
-    "rating": 8.0,
-    "date": "2022-11-18",
-    "year": 2022,
-    "review": "This one is gorgeous in the best way: focused, clear, and emotionally direct. It never loses sight of the characters beneath the concept.",
-    "runtime": 138,
-    "tags": [
-      "Thriller",
-      "Crime"
-    ]
-  },
-  {
-    "title": "Alien",
-    "slug": "alien",
-    "rating": 8.0,
-    "date": "2022-11-02",
-    "year": 2022,
-    "review": "Not flawless, but deeply watchable. The direction keeps everything elegantly controlled. It looks beautiful without becoming empty.",
-    "runtime": 131,
-    "tags": [
-      "Mystery",
-      "Romance"
-    ]
-  },
-  {
-    "title": "Goodfellas",
-    "slug": "goodfellas",
-    "rating": 7.5,
-    "date": "2022-10-17",
-    "year": 2022,
-    "review": "Not flawless, but deeply watchable. It is far more intimate than its premise suggests. The soundtrack is used sparingly and effectively.",
-    "runtime": 95,
-    "tags": [
-      "Comedy",
-      "Romance"
-    ]
-  },
-  {
-    "title": "The Irishman",
-    "slug": "the-irishman",
-    "rating": 8.5,
-    "date": "2022-10-01",
-    "year": 2022,
-    "review": "I admired how the direction keeps everything elegantly controlled. It never loses sight of the characters beneath the concept.",
-    "runtime": 145,
-    "tags": [
-      "Mystery",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "Zodiac",
-    "slug": "zodiac",
-    "rating": 9.5,
-    "date": "2022-09-15",
-    "year": 2022,
-    "review": "I admired how it is far more intimate than its premise suggests. The movie feels confident without showing off.",
-    "runtime": 131,
-    "tags": [
-      "Comedy",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Heat",
-    "slug": "heat",
-    "rating": 7.5,
-    "date": "2022-08-31",
-    "year": 2022,
-    "review": "This one is restless in the best way: focused, clear, and emotionally direct. I would happily revisit it for the craft alone.",
-    "runtime": 124,
-    "tags": [
-      "Drama",
-      "Crime"
-    ]
-  },
-  {
-    "title": "Tár",
-    "slug": "t-r",
-    "rating": 6.5,
-    "date": "2022-08-15",
-    "year": 2022,
-    "review": "A very strong watch. It trusts silence more than exposition. The central idea is clear without becoming simplistic.",
-    "runtime": 124,
-    "tags": [
-      "Sci-Fi",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Ex Machina",
-    "slug": "ex-machina",
-    "rating": 8.5,
-    "date": "2022-07-30",
-    "year": 2022,
-    "review": "This one is gorgeous in the best way: focused, clear, and emotionally direct. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 109,
-    "tags": [
-      "Mystery",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "The Worst Person in the World",
-    "slug": "the-worst-person-in-the-world",
-    "rating": 8.5,
-    "date": "2022-07-14",
-    "year": 2022,
-    "review": "This one is sharp in the best way: focused, clear, and emotionally direct. The soundtrack is used sparingly and effectively.",
-    "runtime": 117,
-    "tags": [
-      "Crime",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "Before Midnight",
-    "slug": "before-midnight",
-    "rating": 7.0,
-    "date": "2022-06-29",
-    "year": 2022,
-    "review": "This one is gorgeous in the best way: focused, clear, and emotionally direct. I liked how the film leaves a little space for the audience.",
-    "runtime": 109,
-    "tags": [
-      "Comedy",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Before Sunset",
-    "slug": "before-sunset",
-    "rating": 7.0,
-    "date": "2022-06-13",
-    "year": 2022,
-    "review": "Not flawless, but deeply watchable. The direction keeps everything elegantly controlled. It never loses sight of the characters beneath the concept.",
-    "runtime": 109,
-    "tags": [
-      "Comedy",
-      "Classic"
-    ]
-  },
-  {
-    "title": "Before Sunrise",
-    "slug": "before-sunrise",
-    "rating": 6.5,
-    "date": "2022-05-28",
-    "year": 2022,
-    "review": "This one is gorgeous in the best way: focused, clear, and emotionally direct. The smaller moments are what make it memorable.",
-    "runtime": 145,
-    "tags": [
-      "Drama",
-      "Comedy"
-    ]
-  },
-  {
-    "title": "Eternal Sunshine of the Spotless Mind",
-    "slug": "eternal-sunshine-of-the-spotless-mind",
-    "rating": 9.5,
-    "date": "2022-05-12",
-    "year": 2022,
-    "review": "Not flawless, but deeply watchable. The final act lands with surprising force. I would happily revisit it for the craft alone.",
-    "runtime": 138,
-    "tags": [
-      "Action",
-      "Romance"
-    ]
-  },
-  {
-    "title": "There Will Be Blood",
-    "slug": "there-will-be-blood",
-    "rating": 6.5,
-    "date": "2022-04-26",
-    "year": 2022,
-    "review": "A melancholic film where every scene feels deliberately shaped. The soundtrack is used sparingly and effectively.",
-    "runtime": 102,
-    "tags": [
-      "Crime",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "No Country for Old Men",
-    "slug": "no-country-for-old-men",
-    "rating": 7.5,
-    "date": "2022-04-11",
-    "year": 2022,
-    "review": "A restless film where the emotional beats feel earned rather than forced. It is the kind of movie that improves once you sit with it.",
-    "runtime": 117,
-    "tags": [
-      "Romance",
-      "Mystery"
-    ]
-  },
-  {
-    "title": "Blade Runner 2049",
-    "slug": "blade-runner-2049",
-    "rating": 8.5,
-    "date": "2022-03-26",
-    "year": 2022,
-    "review": "Not flawless, but deeply watchable. Its performances do most of the heavy lifting. The movie feels confident without showing off.",
-    "runtime": 145,
-    "tags": [
-      "Sci-Fi",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "Prisoners",
-    "slug": "prisoners",
-    "rating": 8.5,
-    "date": "2022-03-10",
-    "year": 2022,
-    "review": "A funny film where the writing quietly sneaks up on you. It is the kind of movie that improves once you sit with it.",
-    "runtime": 145,
-    "tags": [
-      "Crime",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "title": "Little Women",
-    "slug": "little-women",
-    "rating": 7.0,
-    "date": "2022-02-22",
-    "year": 2022,
-    "review": "This one is sharp in the best way: focused, clear, and emotionally direct. It is the kind of movie that improves once you sit with it.",
-    "runtime": 145,
-    "tags": [
-      "Classic",
-      "Mystery"
-    ]
-  },
-  {
-    "title": "The Farewell",
-    "slug": "the-farewell",
-    "rating": 7.0,
-    "date": "2022-02-07",
-    "year": 2022,
-    "review": "Not flawless, but deeply watchable. Every scene feels deliberately shaped. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 145,
-    "tags": [
-      "Comedy",
-      "Arthouse"
-    ]
-  },
-  {
-    "title": "Lady Bird",
-    "slug": "lady-bird",
-    "rating": 7.0,
-    "date": "2022-01-22",
-    "year": 2022,
-    "review": "This one is sharp in the best way: focused, clear, and emotionally direct. It is the kind of movie that improves once you sit with it.",
-    "runtime": 131,
-    "tags": [
-      "Comedy",
-      "Crime"
-    ]
-  },
-  {
-    "title": "The Grand Budapest Hotel",
-    "slug": "the-grand-budapest-hotel",
-    "rating": 9.0,
-    "date": "2022-01-06",
-    "year": 2022,
-    "review": "A very strong watch. It balances style and substance unusually well. It never loses sight of the characters beneath the concept.",
-    "runtime": 109,
-    "tags": [
-      "Comedy",
-      "Mystery"
-    ]
-  },
-  {
-    "title": "Everything Everywhere All at Once",
-    "slug": "everything-everywhere-all-at-once",
-    "rating": 9.0,
-    "date": "2021-12-21",
+    "release_date": "2021-02-19",
+    "review_date": "2021-04-03",
     "year": 2021,
-    "review": "This one is tender in the best way: focused, clear, and emotionally direct. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 95,
-    "tags": [
-      "Romance",
-      "Comedy"
-    ]
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 9.0,
+    "review": "Nomadland is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. Nomadland knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Nomadland a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Nomadland is strong and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "Minari",
+    "release_date": "2021-02-12",
+    "review_date": "2021-04-06",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 7.8,
+    "review": "Minari is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely assured.\n\nWhat I admired most is the movie’s handling of tone. Minari knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: rhythm keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Minari a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and careful emotional shading matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Minari is sharp and often absorbing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 457
+  },
+  {
+    "title": "Promising Young Woman",
+    "release_date": "2020-12-25",
+    "review_date": "2021-02-13",
+    "year": 2021,
+    "release_year": 2020,
+    "genre": "Thriller",
+    "rating": 8.7,
+    "review": "Promising Young Woman is the kind of thriller picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through suspense built from small choices, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely impressive.\n\nWhat I admired most is the movie’s handling of tone. Promising Young Woman knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Promising Young Woman a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where moral pressure and withheld information matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Promising Young Woman is thoughtful and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 466
   },
   {
     "title": "Sound of Metal",
-    "slug": "sound-of-metal",
-    "rating": 8.5,
-    "date": "2021-12-05",
+    "release_date": "2020-11-20",
+    "review_date": "2021-01-20",
     "year": 2021,
-    "review": "Not flawless, but deeply watchable. It trusts silence more than exposition. I liked how the film leaves a little space for the audience.",
-    "runtime": 138,
-    "tags": [
-      "Action",
-      "Mystery"
-    ]
+    "release_year": 2020,
+    "genre": "Drama",
+    "rating": 8.8,
+    "review": "Sound of Metal is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through scene construction that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely assured.\n\nWhat I admired most is the movie’s handling of tone. Sound of Metal knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: rhythm keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Sound of Metal a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and the rhythm of ordinary life matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Sound of Metal is bracing and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 468
+  },
+  {
+    "title": "Judas and the Black Messiah",
+    "release_date": "2021-02-12",
+    "review_date": "2021-03-29",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 9.1,
+    "review": "Judas and the Black Messiah is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through close-ups that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely impressive.\n\nWhat I admired most is the movie’s handling of tone. Judas and the Black Messiah knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: rhythm keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Judas and the Black Messiah a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Judas and the Black Messiah is absorbing and often rich, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 474
+  },
+  {
+    "title": "Another Round",
+    "release_date": "2020-12-04",
+    "review_date": "2021-01-17",
+    "year": 2021,
+    "release_year": 2020,
+    "genre": "Drama",
+    "rating": 8.4,
+    "review": "Another Round is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Another Round knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Another Round a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Another Round is elegant and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
+  },
+  {
+    "title": "The Green Knight",
+    "release_date": "2021-07-30",
+    "review_date": "2021-08-17",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Fantasy",
+    "rating": 7.6,
+    "review": "The Green Knight is the kind of fantasy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through mythic texture, through camera movement that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely impressive.\n\nWhat I admired most is the movie’s handling of tone. The Green Knight knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Green Knight a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where ritual and symbol and storybook strangeness matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Green Knight is rich and often strong, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "Pig",
+    "release_date": "2021-07-16",
+    "review_date": "2021-08-18",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 8.5,
+    "review": "Pig is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. Pig knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Pig a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Pig is bracing and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 460
+  },
+  {
+    "title": "Titane",
+    "release_date": "2021-10-01",
+    "review_date": "2021-11-08",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Horror",
+    "rating": 8.4,
+    "review": "Titane is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through unnerving sound design, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. Titane knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: blocking keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Titane a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where images that linger and dread that accumulates patiently matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Titane is sharp and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 458
+  },
+  {
+    "title": "The Worst Person in the World",
+    "release_date": "2021-10-08",
+    "review_date": "2021-11-24",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 8.4,
+    "review": "The Worst Person in the World is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. The Worst Person in the World knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Worst Person in the World a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and careful emotional shading matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Worst Person in the World is bracing and often absorbing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 484
   },
   {
     "title": "Drive My Car",
-    "slug": "drive-my-car",
-    "rating": 7.5,
-    "date": "2021-11-20",
-    "year": 2021,
-    "review": "This one is patient in the best way: focused, clear, and emotionally direct. The smaller moments are what make it memorable.",
-    "runtime": 109,
-    "tags": [
-      "Crime",
-      "Comedy"
-    ]
+    "release_date": "2021-11-24",
+    "review_date": "2022-01-01",
+    "year": 2022,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 8.8,
+    "review": "Drive My Car is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely thoughtful.\n\nWhat I admired most is the movie’s handling of tone. Drive My Car knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Drive My Car a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Drive My Car is impressive and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 467
   },
   {
-    "title": "The Banshees of Inisherin",
-    "slug": "the-banshees-of-inisherin",
-    "rating": 7.0,
-    "date": "2021-11-04",
+    "title": "Spencer",
+    "release_date": "2021-11-05",
+    "review_date": "2021-12-02",
     "year": 2021,
-    "review": "I admired how the pacing is steadier than I expected. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 109,
-    "tags": [
-      "Mystery",
-      "Thriller"
-    ]
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 8.7,
+    "review": "Spencer is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through close-ups that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely impressive.\n\nWhat I admired most is the movie’s handling of tone. Spencer knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: production design keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Spencer a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Spencer is elegant and often sharp, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 463
   },
   {
-    "title": "Aftersun",
-    "slug": "aftersun",
-    "rating": 6.5,
-    "date": "2021-10-19",
-    "year": 2021,
-    "review": "This one is restrained in the best way: focused, clear, and emotionally direct. The soundtrack is used sparingly and effectively.",
-    "runtime": 124,
-    "tags": [
-      "Romance",
-      "Mystery"
-    ]
+    "title": "The Power of the Dog",
+    "release_date": "2021-11-17",
+    "review_date": "2022-01-11",
+    "year": 2022,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 8.0,
+    "review": "The Power of the Dog is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. The Power of the Dog knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Power of the Dog a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Power of the Dog is rich and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 476
   },
   {
-    "title": "Dune: Part Two",
-    "slug": "dune-part-two",
-    "rating": 7.0,
-    "date": "2021-10-03",
+    "title": "Licorice Pizza",
+    "release_date": "2021-11-26",
+    "review_date": "2021-12-16",
     "year": 2021,
-    "review": "A precise film where it trusts silence more than exposition. The central idea is clear without becoming simplistic.",
-    "runtime": 102,
-    "tags": [
-      "Sci-Fi",
-      "Crime"
-    ]
+    "release_year": 2021,
+    "genre": "Comedy",
+    "rating": 7.6,
+    "review": "Licorice Pizza is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through social embarrassment, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. Licorice Pizza knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Licorice Pizza a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a sly streak of satire and deadpan timing matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Licorice Pizza is excellent and often sharp, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "West Side Story",
+    "release_date": "2021-12-10",
+    "review_date": "2022-01-18",
+    "year": 2022,
+    "release_year": 2021,
+    "genre": "Musical",
+    "rating": 7.6,
+    "review": "West Side Story is the kind of musical picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through performance energy, through scene construction that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. West Side Story knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: production design keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives West Side Story a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where movement as storytelling and classical showmanship matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. West Side Story is elegant and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
+  },
+  {
+    "title": "Belfast",
+    "release_date": "2021-11-12",
+    "review_date": "2021-12-05",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 8.1,
+    "review": "Belfast is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Belfast knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Belfast a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Belfast is strong and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 466
+  },
+  {
+    "title": "The Lost Daughter",
+    "release_date": "2021-12-17",
+    "review_date": "2022-02-01",
+    "year": 2022,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 8.7,
+    "review": "The Lost Daughter is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. The Lost Daughter knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Lost Daughter a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Lost Daughter is assured and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 467
   },
   {
     "title": "Dune",
-    "slug": "dune",
-    "rating": 9.5,
-    "date": "2021-09-18",
+    "release_date": "2021-10-22",
+    "review_date": "2021-11-26",
     "year": 2021,
-    "review": "Not flawless, but deeply watchable. Every scene feels deliberately shaped. It stays coherent even when it becomes messy on purpose.",
-    "runtime": 117,
-    "tags": [
-      "Classic",
-      "Sci-Fi"
-    ]
+    "release_year": 2021,
+    "genre": "Sci-Fi",
+    "rating": 8.0,
+    "review": "Dune is the kind of sci-fi picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through big ideas grounded in feeling, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. Dune knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Dune a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where scale without losing intimacy and speculative detail matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Dune is thoughtful and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "No Time to Die",
+    "release_date": "2021-10-08",
+    "review_date": "2021-12-02",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Action",
+    "rating": 8.1,
+    "review": "No Time to Die is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through muscular set pieces, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. No Time to Die knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives No Time to Die a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where clean visual geography and a knack for escalation matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. No Time to Die is excellent and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 471
+  },
+  {
+    "title": "The French Dispatch",
+    "release_date": "2021-10-22",
+    "review_date": "2021-12-07",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Comedy",
+    "rating": 8.5,
+    "review": "The French Dispatch is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through precision in tone, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. The French Dispatch knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The French Dispatch a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where deadpan timing and social embarrassment matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The French Dispatch is thoughtful and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 466
+  },
+  {
+    "title": "C'mon C'mon",
+    "release_date": "2021-11-19",
+    "review_date": "2021-12-17",
+    "year": 2021,
+    "release_year": 2021,
+    "genre": "Drama",
+    "rating": 9.1,
+    "review": "C'mon C'mon is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through scene construction that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. C'mon C'mon knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: blocking keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives C'mon C'mon a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and careful emotional shading matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. C'mon C'mon is strong and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
+  },
+  {
+    "title": "The Batman",
+    "release_date": "2022-03-04",
+    "review_date": "2022-05-07",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Superhero",
+    "rating": 7.6,
+    "review": "The Batman is the kind of superhero picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through myth-making, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. The Batman knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Batman a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where blockbuster clarity and pop grandeur matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Batman is rich and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 463
+  },
+  {
+    "title": "Everything Everywhere All at Once",
+    "release_date": "2022-03-25",
+    "review_date": "2022-05-26",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Sci-Fi",
+    "rating": 8.7,
+    "review": "Everything Everywhere All at Once is the kind of sci-fi picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through speculative detail, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Everything Everywhere All at Once knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Everything Everywhere All at Once a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where big ideas grounded in feeling and scale without losing intimacy matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Everything Everywhere All at Once is rich and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 476
+  },
+  {
+    "title": "The Northman",
+    "release_date": "2022-04-22",
+    "review_date": "2022-06-12",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Action",
+    "rating": 8.1,
+    "review": "The Northman is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through muscular set pieces, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. The Northman knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Northman a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where clean visual geography and forward momentum matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Northman is thoughtful and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 461
+  },
+  {
+    "title": "Top Gun: Maverick",
+    "release_date": "2022-05-27",
+    "review_date": "2022-06-25",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Action",
+    "rating": 9.1,
+    "review": "Top Gun: Maverick is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through forward momentum, through scene construction that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely assured.\n\nWhat I admired most is the movie’s handling of tone. Top Gun: Maverick knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Top Gun: Maverick a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a knack for escalation and clean visual geography matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Top Gun: Maverick is bracing and often sharp, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 467
+  },
+  {
+    "title": "Decision to Leave",
+    "release_date": "2022-10-14",
+    "review_date": "2022-11-21",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Thriller",
+    "rating": 8.5,
+    "review": "Decision to Leave is the kind of thriller picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a cool, exacting pace, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely assured.\n\nWhat I admired most is the movie’s handling of tone. Decision to Leave knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Decision to Leave a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where moral pressure and withheld information matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Decision to Leave is impressive and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "Aftersun",
+    "release_date": "2022-10-21",
+    "review_date": "2022-12-25",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 9.0,
+    "review": "Aftersun is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through close-ups that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Aftersun knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Aftersun a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Aftersun is strong and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 459
+  },
+  {
+    "title": "Tár",
+    "release_date": "2022-10-07",
+    "review_date": "2022-11-25",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 7.4,
+    "review": "Tár is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. Tár knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Tár a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Tár is strong and often rich, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
+  },
+  {
+    "title": "Women Talking",
+    "release_date": "2022-12-23",
+    "review_date": "2023-02-25",
+    "year": 2023,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 8.0,
+    "review": "Women Talking is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through scene construction that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. Women Talking knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Women Talking a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Women Talking is rich and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 467
+  },
+  {
+    "title": "The Fabelmans",
+    "release_date": "2022-11-23",
+    "review_date": "2023-01-22",
+    "year": 2023,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 7.6,
+    "review": "The Fabelmans is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. The Fabelmans knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Fabelmans a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Fabelmans is bracing and often rich, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "Glass Onion: A Knives Out Mystery",
+    "release_date": "2022-11-23",
+    "review_date": "2023-01-20",
+    "year": 2023,
+    "release_year": 2022,
+    "genre": "Mystery",
+    "rating": 7.8,
+    "review": "Glass Onion: A Knives Out Mystery is the kind of mystery picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through questioning point of view, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Glass Onion: A Knives Out Mystery knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Glass Onion: A Knives Out Mystery a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where pleasure in structure and careful misdirection matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Glass Onion: A Knives Out Mystery is elegant and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 477
+  },
+  {
+    "title": "The Banshees of Inisherin",
+    "release_date": "2022-10-21",
+    "review_date": "2022-12-05",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 8.4,
+    "review": "The Banshees of Inisherin is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely thoughtful.\n\nWhat I admired most is the movie’s handling of tone. The Banshees of Inisherin knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Banshees of Inisherin a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Banshees of Inisherin is sharp and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 475
+  },
+  {
+    "title": "Triangle of Sadness",
+    "release_date": "2022-10-07",
+    "review_date": "2022-11-13",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Comedy",
+    "rating": 9.1,
+    "review": "Triangle of Sadness is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a sly streak of satire, through camera movement that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. Triangle of Sadness knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: framing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Triangle of Sadness a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where deadpan timing and social embarrassment matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Triangle of Sadness is elegant and often rich, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "All Quiet on the Western Front",
+    "release_date": "2022-10-28",
+    "review_date": "2022-11-14",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "War",
+    "rating": 8.1,
+    "review": "All Quiet on the Western Front is the kind of war picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a sense of scale that never feels abstract, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely thoughtful.\n\nWhat I admired most is the movie’s handling of tone. All Quiet on the Western Front knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: framing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives All Quiet on the Western Front a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where historical immediacy and moral exhaustion matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. All Quiet on the Western Front is strong and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 481
+  },
+  {
+    "title": "Empire of Light",
+    "release_date": "2022-12-09",
+    "review_date": "2022-12-27",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 8.3,
+    "review": "Empire of Light is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Empire of Light knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Empire of Light a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Empire of Light is assured and often rich, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 471
+  },
+  {
+    "title": "Babylon",
+    "release_date": "2022-12-23",
+    "review_date": "2023-01-13",
+    "year": 2023,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 8.8,
+    "review": "Babylon is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. Babylon knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: framing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Babylon a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and the rhythm of ordinary life matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Babylon is strong and often absorbing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 461
+  },
+  {
+    "title": "Living",
+    "release_date": "2022-12-23",
+    "review_date": "2023-03-03",
+    "year": 2023,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 8.8,
+    "review": "Living is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. Living knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Living a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and the rhythm of ordinary life matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Living is assured and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 459
+  },
+  {
+    "title": "RRR",
+    "release_date": "2022-03-25",
+    "review_date": "2022-04-18",
+    "year": 2022,
+    "release_year": 2022,
+    "genre": "Action",
+    "rating": 9.0,
+    "review": "RRR is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through clean visual geography, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. RRR knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives RRR a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where forward momentum and a knack for escalation matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. RRR is sharp and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 457
+  },
+  {
+    "title": "The Whale",
+    "release_date": "2022-12-09",
+    "review_date": "2023-01-13",
+    "year": 2023,
+    "release_year": 2022,
+    "genre": "Drama",
+    "rating": 7.4,
+    "review": "The Whale is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. The Whale knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Whale a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Whale is excellent and often absorbing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 466
+  },
+  {
+    "title": "Puss in Boots: The Last Wish",
+    "release_date": "2022-12-21",
+    "review_date": "2023-01-07",
+    "year": 2023,
+    "release_year": 2022,
+    "genre": "Animation",
+    "rating": 8.1,
+    "review": "Puss in Boots: The Last Wish is the kind of animation picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through visual wit, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. Puss in Boots: The Last Wish knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Puss in Boots: The Last Wish a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where family feeling without sentimentality and inventive world-building matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Puss in Boots: The Last Wish is rich and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 480
+  },
+  {
+    "title": "John Wick: Chapter 4",
+    "release_date": "2023-03-24",
+    "review_date": "2023-05-23",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Action",
+    "rating": 7.6,
+    "review": "John Wick: Chapter 4 is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through muscular set pieces, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. John Wick: Chapter 4 knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives John Wick: Chapter 4 a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where clean visual geography and a knack for escalation matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. John Wick: Chapter 4 is excellent and often sharp, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 470
+  },
+  {
+    "title": "Creed III",
+    "release_date": "2023-03-03",
+    "review_date": "2023-04-28",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Drama",
+    "rating": 8.1,
+    "review": "Creed III is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely assured.\n\nWhat I admired most is the movie’s handling of tone. Creed III knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: framing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Creed III a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Creed III is absorbing and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 466
+  },
+  {
+    "title": "Air",
+    "release_date": "2023-04-05",
+    "review_date": "2023-04-23",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Drama",
+    "rating": 8.3,
+    "review": "Air is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through editing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. Air knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Air a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Air is elegant and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
   },
   {
     "title": "Past Lives",
-    "slug": "past-lives",
-    "rating": 7.0,
-    "date": "2021-09-02",
-    "year": 2021,
-    "review": "A precise film where the writing quietly sneaks up on you. It never loses sight of the characters beneath the concept.",
-    "runtime": 109,
-    "tags": [
-      "Arthouse",
-      "Crime"
-    ]
+    "release_date": "2023-06-02",
+    "review_date": "2023-07-03",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Drama",
+    "rating": 8.1,
+    "review": "Past Lives is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through camera movement that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. Past Lives knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Past Lives a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and the rhythm of ordinary life matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Past Lives is bracing and often strong, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
   },
   {
-    "title": "Portrait of a Lady on Fire",
-    "slug": "portrait-of-a-lady-on-fire",
+    "title": "Asteroid City",
+    "release_date": "2023-06-23",
+    "review_date": "2023-08-10",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Comedy",
+    "rating": 7.4,
+    "review": "Asteroid City is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through social embarrassment, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Asteroid City knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Asteroid City a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where deadpan timing and precision in tone matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Asteroid City is bracing and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 458
+  },
+  {
+    "title": "Oppenheimer",
+    "release_date": "2023-07-21",
+    "review_date": "2023-08-25",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Drama",
     "rating": 8.5,
-    "date": "2021-08-17",
-    "year": 2021,
-    "review": "A restrained film where the final act lands with surprising force. The central idea is clear without becoming simplistic.",
-    "runtime": 117,
-    "tags": [
-      "Action",
-      "Drama"
-    ]
+    "review": "Oppenheimer is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely impressive.\n\nWhat I admired most is the movie’s handling of tone. Oppenheimer knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Oppenheimer a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Oppenheimer is bracing and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
   },
   {
-    "title": "Get Out",
-    "slug": "get-out",
+    "title": "Barbie",
+    "release_date": "2023-07-21",
+    "review_date": "2023-08-15",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Comedy",
+    "rating": 9.0,
+    "review": "Barbie is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through precision in tone, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely assured.\n\nWhat I admired most is the movie’s handling of tone. Barbie knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Barbie a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a sly streak of satire and deadpan timing matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Barbie is sharp and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 459
+  },
+  {
+    "title": "Mission: Impossible – Dead Reckoning Part One",
+    "release_date": "2023-07-12",
+    "review_date": "2023-09-03",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Action",
+    "rating": 7.4,
+    "review": "Mission: Impossible – Dead Reckoning Part One is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through muscular set pieces, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. Mission: Impossible – Dead Reckoning Part One knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Mission: Impossible – Dead Reckoning Part One a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where clean visual geography and forward momentum matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Mission: Impossible – Dead Reckoning Part One is bracing and often rich, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 479
+  },
+  {
+    "title": "Anatomy of a Fall",
+    "release_date": "2023-10-13",
+    "review_date": "2023-12-08",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Drama",
+    "rating": 8.7,
+    "review": "Anatomy of a Fall is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Anatomy of a Fall knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Anatomy of a Fall a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and the rhythm of ordinary life matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Anatomy of a Fall is strong and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 477
+  },
+  {
+    "title": "Killers of the Flower Moon",
+    "release_date": "2023-10-20",
+    "review_date": "2023-11-09",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Drama",
+    "rating": 8.4,
+    "review": "Killers of the Flower Moon is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through editing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely thoughtful.\n\nWhat I admired most is the movie’s handling of tone. Killers of the Flower Moon knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: rhythm keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Killers of the Flower Moon a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Killers of the Flower Moon is rich and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 474
+  },
+  {
+    "title": "The Holdovers",
+    "release_date": "2023-10-27",
+    "review_date": "2023-11-16",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Comedy",
+    "rating": 9.0,
+    "review": "The Holdovers is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a sly streak of satire, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely impressive.\n\nWhat I admired most is the movie’s handling of tone. The Holdovers knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: rhythm keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Holdovers a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where precision in tone and social embarrassment matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Holdovers is sharp and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
+  },
+  {
+    "title": "Poor Things",
+    "release_date": "2023-12-08",
+    "review_date": "2024-02-09",
+    "year": 2024,
+    "release_year": 2023,
+    "genre": "Fantasy",
     "rating": 8.0,
-    "date": "2021-08-01",
-    "year": 2021,
-    "review": "Not flawless, but deeply watchable. The direction keeps everything elegantly controlled. It looks beautiful without becoming empty.",
-    "runtime": 131,
-    "tags": [
-      "Comedy",
-      "Thriller"
-    ]
+    "review": "Poor Things is the kind of fantasy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through ritual and symbol, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Poor Things knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Poor Things a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where dream-logic imagery and mythic texture matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Poor Things is absorbing and often strong, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
   },
   {
-    "title": "Her",
-    "slug": "her",
-    "rating": 7.0,
-    "date": "2021-07-16",
-    "year": 2021,
-    "review": "I admired how it is far more intimate than its premise suggests. I would happily revisit it for the craft alone.",
-    "runtime": 95,
-    "tags": [
-      "Sci-Fi",
-      "Romance"
-    ]
+    "title": "May December",
+    "release_date": "2023-12-01",
+    "review_date": "2024-01-29",
+    "year": 2024,
+    "release_year": 2023,
+    "genre": "Drama",
+    "rating": 7.6,
+    "review": "May December is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. May December knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives May December a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. May December is assured and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 467
   },
   {
-    "title": "Mad Max: Fury Road",
-    "slug": "mad-max-fury-road",
-    "rating": 6.5,
-    "date": "2021-07-01",
-    "year": 2021,
-    "review": "A tender film where it is far more intimate than its premise suggests. It is the kind of movie that improves once you sit with it.",
-    "runtime": 131,
-    "tags": [
-      "Thriller",
-      "Mystery"
-    ]
+    "title": "The Zone of Interest",
+    "release_date": "2023-12-15",
+    "review_date": "2024-01-30",
+    "year": 2024,
+    "release_year": 2023,
+    "genre": "Drama",
+    "rating": 7.6,
+    "review": "The Zone of Interest is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. The Zone of Interest knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Zone of Interest a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Zone of Interest is bracing and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 472
   },
   {
-    "title": "La La Land",
-    "slug": "la-la-land",
+    "title": "Priscilla",
+    "release_date": "2023-11-03",
+    "review_date": "2023-12-26",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Drama",
     "rating": 8.5,
-    "date": "2021-06-15",
-    "year": 2021,
-    "review": "A restrained film where it trusts silence more than exposition. I would happily revisit it for the craft alone.",
-    "runtime": 152,
-    "tags": [
-      "Arthouse",
-      "Thriller"
-    ]
+    "review": "Priscilla is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through camera movement that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. Priscilla knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Priscilla a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and careful emotional shading matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Priscilla is elegant and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 458
   },
   {
-    "title": "The Social Network",
-    "slug": "the-social-network",
-    "rating": 6.5,
-    "date": "2021-05-30",
-    "year": 2021,
-    "review": "A very strong watch. It is far more intimate than its premise suggests. The movie feels confident without showing off.",
-    "runtime": 138,
-    "tags": [
-      "Comedy",
-      "Arthouse"
-    ]
+    "title": "American Fiction",
+    "release_date": "2023-12-15",
+    "review_date": "2024-01-25",
+    "year": 2024,
+    "release_year": 2023,
+    "genre": "Comedy",
+    "rating": 8.4,
+    "review": "American Fiction is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through deadpan timing, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. American Fiction knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives American Fiction a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a sly streak of satire and precision in tone matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. American Fiction is sharp and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
   },
   {
-    "title": "Arrival",
-    "slug": "arrival",
+    "title": "The Boy and the Heron",
+    "release_date": "2023-12-08",
+    "review_date": "2024-01-13",
+    "year": 2024,
+    "release_year": 2023,
+    "genre": "Animation",
+    "rating": 8.1,
+    "review": "The Boy and the Heron is the kind of animation picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through expressive movement, through camera movement that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. The Boy and the Heron knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Boy and the Heron a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where visual wit and inventive world-building matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Boy and the Heron is thoughtful and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 476
+  },
+  {
+    "title": "Spider-Man: Across the Spider-Verse",
+    "release_date": "2023-06-02",
+    "review_date": "2023-07-04",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Animation",
+    "rating": 7.6,
+    "review": "Spider-Man: Across the Spider-Verse is the kind of animation picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through family feeling without sentimentality, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. Spider-Man: Across the Spider-Verse knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: framing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Spider-Man: Across the Spider-Verse a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where expressive movement and visual wit matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Spider-Man: Across the Spider-Verse is absorbing and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 469
+  },
+  {
+    "title": "Godzilla Minus One",
+    "release_date": "2023-12-01",
+    "review_date": "2023-12-20",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Action",
+    "rating": 8.3,
+    "review": "Godzilla Minus One is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through forward momentum, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely assured.\n\nWhat I admired most is the movie’s handling of tone. Godzilla Minus One knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Godzilla Minus One a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a knack for escalation and clean visual geography matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Godzilla Minus One is elegant and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "Are You There God? It's Me, Margaret.",
+    "release_date": "2023-04-28",
+    "review_date": "2023-07-03",
+    "year": 2023,
+    "release_year": 2023,
+    "genre": "Comedy",
+    "rating": 8.8,
+    "review": "Are You There God? It's Me, Margaret. is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a sly streak of satire, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. Are You There God? It's Me, Margaret. knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Are You There God? It's Me, Margaret. a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where deadpan timing and social embarrassment matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Are You There God? It's Me, Margaret. is excellent and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 482
+  },
+  {
+    "title": "Monster",
+    "release_date": "2023-11-22",
+    "review_date": "2024-01-25",
+    "year": 2024,
+    "release_year": 2023,
+    "genre": "Drama",
+    "rating": 8.1,
+    "review": "Monster is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Monster knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: blocking keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Monster a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and the rhythm of ordinary life matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Monster is rich and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
+  },
+  {
+    "title": "Challengers",
+    "release_date": "2024-04-26",
+    "review_date": "2024-05-31",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Drama",
+    "rating": 7.8,
+    "review": "Challengers is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Challengers knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: rhythm keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Challengers a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and careful emotional shading matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Challengers is assured and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
+  },
+  {
+    "title": "Dune: Part Two",
+    "release_date": "2024-03-01",
+    "review_date": "2024-04-27",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Sci-Fi",
+    "rating": 7.8,
+    "review": "Dune: Part Two is the kind of sci-fi picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through speculative detail, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Dune: Part Two knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Dune: Part Two a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where big ideas grounded in feeling and scale without losing intimacy matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Dune: Part Two is elegant and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 468
+  },
+  {
+    "title": "Civil War",
+    "release_date": "2024-04-12",
+    "review_date": "2024-06-02",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Action",
+    "rating": 8.8,
+    "review": "Civil War is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through muscular set pieces, through close-ups that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. Civil War knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Civil War a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where clean visual geography and forward momentum matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Civil War is thoughtful and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 461
+  },
+  {
+    "title": "Furiosa: A Mad Max Saga",
+    "release_date": "2024-05-24",
+    "review_date": "2024-06-21",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Action",
+    "rating": 7.4,
+    "review": "Furiosa: A Mad Max Saga is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through clean visual geography, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. Furiosa: A Mad Max Saga knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Furiosa: A Mad Max Saga a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where forward momentum and muscular set pieces matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Furiosa: A Mad Max Saga is absorbing and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 474
+  },
+  {
+    "title": "Inside Out 2",
+    "release_date": "2024-06-14",
+    "review_date": "2024-07-31",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Animation",
+    "rating": 8.4,
+    "review": "Inside Out 2 is the kind of animation picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through family feeling without sentimentality, through close-ups that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. Inside Out 2 knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Inside Out 2 a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where inventive world-building and visual wit matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Inside Out 2 is absorbing and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
+  },
+  {
+    "title": "A Quiet Place: Day One",
+    "release_date": "2024-06-28",
+    "review_date": "2024-08-24",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Horror",
+    "rating": 7.6,
+    "review": "A Quiet Place: Day One is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a taste for unease over jump scares, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. A Quiet Place: Day One knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives A Quiet Place: Day One a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where unnerving sound design and images that linger matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. A Quiet Place: Day One is rich and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 477
+  },
+  {
+    "title": "Longlegs",
+    "release_date": "2024-07-12",
+    "review_date": "2024-08-22",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Horror",
+    "rating": 9.1,
+    "review": "Longlegs is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a taste for unease over jump scares, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Longlegs knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: rhythm keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Longlegs a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where unnerving sound design and dread that accumulates patiently matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Longlegs is assured and often strong, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
+  },
+  {
+    "title": "Twisters",
+    "release_date": "2024-07-19",
+    "review_date": "2024-09-17",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Action",
     "rating": 9.0,
-    "date": "2021-05-14",
-    "year": 2021,
-    "review": "I admired how the emotional beats feel earned rather than forced. It is the kind of movie that improves once you sit with it.",
-    "runtime": 117,
-    "tags": [
-      "Action",
-      "Mystery"
-    ]
+    "review": "Twisters is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a knack for escalation, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely impressive.\n\nWhat I admired most is the movie’s handling of tone. Twisters knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Twisters a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where clean visual geography and forward momentum matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Twisters is excellent and often absorbing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 458
   },
   {
-    "title": "Moonlight",
-    "slug": "moonlight",
-    "rating": 9.5,
-    "date": "2021-04-28",
-    "year": 2021,
-    "review": "I admired how it is far more intimate than its premise suggests. It looks beautiful without becoming empty.",
-    "runtime": 124,
-    "tags": [
-      "Action",
-      "Romance"
-    ]
+    "title": "Alien: Romulus",
+    "release_date": "2024-08-16",
+    "review_date": "2024-09-17",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Horror",
+    "rating": 8.0,
+    "review": "Alien: Romulus is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a taste for unease over jump scares, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely assured.\n\nWhat I admired most is the movie’s handling of tone. Alien: Romulus knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Alien: Romulus a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where images that linger and dread that accumulates patiently matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Alien: Romulus is thoughtful and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 467
   },
   {
-    "title": "Whiplash",
-    "slug": "whiplash",
-    "rating": 9.0,
-    "date": "2021-04-13",
-    "year": 2021,
-    "review": "I admired how the final act lands with surprising force. I would happily revisit it for the craft alone.",
-    "runtime": 124,
-    "tags": [
-      "Thriller",
-      "Mystery"
-    ]
+    "title": "The Substance",
+    "release_date": "2024-09-20",
+    "review_date": "2024-11-25",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Horror",
+    "rating": 8.0,
+    "review": "The Substance is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through dread that accumulates patiently, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely thoughtful.\n\nWhat I admired most is the movie’s handling of tone. The Substance knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Substance a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a taste for unease over jump scares and unnerving sound design matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Substance is rich and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 470
   },
   {
-    "title": "Spirited Away",
-    "slug": "spirited-away",
+    "title": "Conclave",
+    "release_date": "2024-10-25",
+    "review_date": "2024-11-11",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Drama",
+    "rating": 8.0,
+    "review": "Conclave is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Conclave knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: scene construction keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Conclave a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a refusal of easy catharsis and careful emotional shading matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Conclave is bracing and often strong, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
+  },
+  {
+    "title": "Anora",
+    "release_date": "2024-10-18",
+    "review_date": "2024-12-15",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Comedy",
+    "rating": 7.4,
+    "review": "Anora is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a sly streak of satire, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. Anora knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: blocking keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Anora a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where social embarrassment and deadpan timing matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Anora is elegant and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 459
+  },
+  {
+    "title": "The Brutalist",
+    "release_date": "2024-12-20",
+    "review_date": "2025-02-25",
+    "year": 2025,
+    "release_year": 2024,
+    "genre": "Drama",
+    "rating": 8.0,
+    "review": "The Brutalist is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. The Brutalist knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Brutalist a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Brutalist is thoughtful and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
+  },
+  {
+    "title": "Nickel Boys",
+    "release_date": "2024-12-13",
+    "review_date": "2025-01-14",
+    "year": 2025,
+    "release_year": 2024,
+    "genre": "Drama",
+    "rating": 7.8,
+    "review": "Nickel Boys is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through scene construction that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Nickel Boys knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Nickel Boys a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and careful emotional shading matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Nickel Boys is bracing and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 466
+  },
+  {
+    "title": "A Real Pain",
+    "release_date": "2024-11-01",
+    "review_date": "2024-12-12",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Comedy",
     "rating": 8.5,
-    "date": "2021-03-28",
-    "year": 2021,
-    "review": "A very strong watch. The emotional beats feel earned rather than forced. The central idea is clear without becoming simplistic.",
-    "runtime": 138,
-    "tags": [
-      "Thriller",
-      "Comedy"
-    ]
+    "review": "A Real Pain is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through deadpan timing, through scene construction that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. A Real Pain knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives A Real Pain a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a sly streak of satire and precision in tone matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. A Real Pain is impressive and often sharp, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 466
   },
   {
-    "title": "Parasite",
-    "slug": "parasite",
-    "rating": 7.0,
-    "date": "2021-03-12",
-    "year": 2021,
-    "review": "A very strong watch. Every scene feels deliberately shaped. The soundtrack is used sparingly and effectively.",
-    "runtime": 138,
-    "tags": [
-      "Arthouse",
-      "Thriller"
-    ]
+    "title": "Saturday Night",
+    "release_date": "2024-10-11",
+    "review_date": "2024-12-11",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Comedy",
+    "rating": 8.1,
+    "review": "Saturday Night is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through precision in tone, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely thoughtful.\n\nWhat I admired most is the movie’s handling of tone. Saturday Night knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Saturday Night a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a sly streak of satire and deadpan timing matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Saturday Night is sharp and often rich, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
   },
   {
-    "title": "The Dark Knight",
-    "slug": "the-dark-knight",
-    "rating": 6.5,
-    "date": "2021-02-24",
-    "year": 2021,
-    "review": "I admired how it balances style and substance unusually well. The central idea is clear without becoming simplistic.",
-    "runtime": 109,
-    "tags": [
-      "Comedy",
-      "Classic"
-    ]
+    "title": "Sing Sing",
+    "release_date": "2024-07-12",
+    "review_date": "2024-09-08",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Drama",
+    "rating": 8.3,
+    "review": "Sing Sing is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. Sing Sing knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Sing Sing a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Sing Sing is strong and often absorbing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 466
   },
   {
-    "title": "Inception",
-    "slug": "inception",
+    "title": "The Wild Robot",
+    "release_date": "2024-09-27",
+    "review_date": "2024-11-08",
+    "year": 2024,
+    "release_year": 2024,
+    "genre": "Animation",
+    "rating": 8.5,
+    "review": "The Wild Robot is the kind of animation picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through expressive movement, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. The Wild Robot knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Wild Robot a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where family feeling without sentimentality and inventive world-building matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Wild Robot is strong and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 470
+  },
+  {
+    "title": "Nosferatu",
+    "release_date": "2024-12-25",
+    "review_date": "2025-01-22",
+    "year": 2025,
+    "release_year": 2024,
+    "genre": "Horror",
     "rating": 9.0,
-    "date": "2021-02-09",
-    "year": 2021,
-    "review": "This one is patient in the best way: focused, clear, and emotionally direct. I would happily revisit it for the craft alone.",
-    "runtime": 152,
-    "tags": [
-      "Arthouse",
-      "Action"
-    ]
+    "review": "Nosferatu is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through images that linger, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Nosferatu knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Nosferatu a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a taste for unease over jump scares and unnerving sound design matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Nosferatu is excellent and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 463
   },
   {
-    "title": "Pulp Fiction",
-    "slug": "pulp-fiction",
-    "rating": 7.5,
-    "date": "2021-01-24",
-    "year": 2021,
-    "review": "Not flawless, but deeply watchable. It trusts silence more than exposition. I would happily revisit it for the craft alone.",
-    "runtime": 145,
-    "tags": [
-      "Arthouse",
-      "Classic"
-    ]
+    "title": "Wicked",
+    "release_date": "2024-11-22",
+    "review_date": "2025-01-26",
+    "year": 2025,
+    "release_year": 2024,
+    "genre": "Musical",
+    "rating": 7.6,
+    "review": "Wicked is the kind of musical picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through movement as storytelling, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. Wicked knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Wicked a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where performance energy and emotions pushed into melody matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Wicked is absorbing and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
   },
   {
-    "title": "The Godfather",
-    "slug": "the-godfather",
+    "title": "Flow",
+    "release_date": "2024-11-22",
+    "review_date": "2025-01-15",
+    "year": 2025,
+    "release_year": 2024,
+    "genre": "Animation",
+    "rating": 9.1,
+    "review": "Flow is the kind of animation picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through family feeling without sentimentality, through camera movement that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. Flow knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: blocking keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Flow a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where visual wit and inventive world-building matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Flow is absorbing and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 457
+  },
+  {
+    "title": "Hard Truths",
+    "release_date": "2024-12-06",
+    "review_date": "2025-02-08",
+    "year": 2025,
+    "release_year": 2024,
+    "genre": "Drama",
+    "rating": 8.5,
+    "review": "Hard Truths is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through human-scale stakes, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. Hard Truths knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Hard Truths a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Hard Truths is absorbing and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 465
+  },
+  {
+    "title": "The Room Next Door",
+    "release_date": "2024-12-20",
+    "review_date": "2025-01-13",
+    "year": 2025,
+    "release_year": 2024,
+    "genre": "Drama",
+    "rating": 8.8,
+    "review": "The Room Next Door is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through editing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. The Room Next Door knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Room Next Door a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and a refusal of easy catharsis matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Room Next Door is impressive and often rich, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 472
+  },
+  {
+    "title": "A Complete Unknown",
+    "release_date": "2024-12-25",
+    "review_date": "2025-01-15",
+    "year": 2025,
+    "release_year": 2024,
+    "genre": "Drama",
+    "rating": 8.4,
+    "review": "A Complete Unknown is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through careful emotional shading, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. A Complete Unknown knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: production design keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives A Complete Unknown a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where the rhythm of ordinary life and human-scale stakes matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. A Complete Unknown is rich and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 468
+  },
+  {
+    "title": "Black Bag",
+    "release_date": "2025-03-14",
+    "review_date": "2025-04-05",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Thriller",
+    "rating": 7.8,
+    "review": "Black Bag is the kind of thriller picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through suspense built from small choices, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. Black Bag knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: framing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Black Bag a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where withheld information and a cool, exacting pace matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Black Bag is impressive and often sharp, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
+  },
+  {
+    "title": "Mickey 17",
+    "release_date": "2025-03-07",
+    "review_date": "2025-04-18",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Sci-Fi",
+    "rating": 8.1,
+    "review": "Mickey 17 is the kind of sci-fi picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a fascination with systems and belief, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. Mickey 17 knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: framing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Mickey 17 a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where scale without losing intimacy and big ideas grounded in feeling matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a stretch of overstatement, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Mickey 17 is impressive and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 468
+  },
+  {
+    "title": "Sinners",
+    "release_date": "2025-04-18",
+    "review_date": "2025-06-20",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Horror",
+    "rating": 8.0,
+    "review": "Sinners is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through images that linger, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely thoughtful.\n\nWhat I admired most is the movie’s handling of tone. Sinners knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Sinners a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where dread that accumulates patiently and unnerving sound design matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Sinners is sharp and often absorbing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 461
+  },
+  {
+    "title": "Thunderbolts*",
+    "release_date": "2025-05-02",
+    "review_date": "2025-06-07",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Superhero",
+    "rating": 7.4,
+    "review": "Thunderbolts* is the kind of superhero picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through pop grandeur, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. Thunderbolts* knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: performance texture keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Thunderbolts* a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where myth-making and character conflict folded into spectacle matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Thunderbolts* is rich and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 457
+  },
+  {
+    "title": "Mission: Impossible – The Final Reckoning",
+    "release_date": "2025-05-23",
+    "review_date": "2025-07-08",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Action",
+    "rating": 8.8,
+    "review": "Mission: Impossible – The Final Reckoning is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through muscular set pieces, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. Mission: Impossible – The Final Reckoning knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Mission: Impossible – The Final Reckoning a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where a knack for escalation and forward momentum matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Mission: Impossible – The Final Reckoning is excellent and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 476
+  },
+  {
+    "title": "28 Years Later",
+    "release_date": "2025-06-20",
+    "review_date": "2025-07-18",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Horror",
+    "rating": 8.3,
+    "review": "28 Years Later is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through dread that accumulates patiently, through sound mix that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. 28 Years Later knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives 28 Years Later a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where unnerving sound design and a taste for unease over jump scares matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. 28 Years Later is elegant and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 471
+  },
+  {
+    "title": "Superman",
+    "release_date": "2025-07-11",
+    "review_date": "2025-08-17",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Superhero",
+    "rating": 8.3,
+    "review": "Superman is the kind of superhero picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through myth-making, through editing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. Superman knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: blocking keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Superman a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where pop grandeur and character conflict folded into spectacle matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Superman is elegant and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 460
+  },
+  {
+    "title": "Fantastic Four: First Steps",
+    "release_date": "2025-07-25",
+    "review_date": "2025-08-21",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Superhero",
+    "rating": 8.4,
+    "review": "Fantastic Four: First Steps is the kind of superhero picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through character conflict folded into spectacle, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely strong.\n\nWhat I admired most is the movie’s handling of tone. Fantastic Four: First Steps knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: sound mix keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Fantastic Four: First Steps a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where pop grandeur and blockbuster clarity matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where patches of obvious symbolism, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Fantastic Four: First Steps is bracing and often impressive, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 470
+  },
+  {
+    "title": "The Phoenician Scheme",
+    "release_date": "2025-05-30",
+    "review_date": "2025-07-27",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Comedy",
+    "rating": 7.4,
+    "review": "The Phoenician Scheme is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through social embarrassment, through close-ups that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. The Phoenician Scheme knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: production design keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Phoenician Scheme a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where precision in tone and deadpan timing matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Phoenician Scheme is absorbing and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 463
+  },
+  {
+    "title": "The Life of Chuck",
+    "release_date": "2025-06-13",
+    "review_date": "2025-07-18",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Drama",
+    "rating": 8.4,
+    "review": "The Life of Chuck is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a refusal of easy catharsis, through blocking that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely bracing.\n\nWhat I admired most is the movie’s handling of tone. The Life of Chuck knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives The Life of Chuck a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where careful emotional shading and the rhythm of ordinary life matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. The Life of Chuck is impressive and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 474
+  },
+  {
+    "title": "Materialists",
+    "release_date": "2025-06-13",
+    "review_date": "2025-07-09",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Comedy",
+    "rating": 8.7,
+    "review": "Materialists is the kind of comedy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a sly streak of satire, through production design that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely sharp.\n\nWhat I admired most is the movie’s handling of tone. Materialists knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: camera movement keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Materialists a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where deadpan timing and precision in tone matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Materialists is impressive and often excellent, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 460
+  },
+  {
+    "title": "Eddington",
+    "release_date": "2025-07-18",
+    "review_date": "2025-08-12",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Drama",
+    "rating": 7.8,
+    "review": "Eddington is the kind of drama picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through the rhythm of ordinary life, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely elegant.\n\nWhat I admired most is the movie’s handling of tone. Eddington knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Eddington a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where human-scale stakes and careful emotional shading matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a tendency to underline a point twice, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Eddington is absorbing and often sharp, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 462
+  },
+  {
+    "title": "Jurassic World Rebirth",
+    "release_date": "2025-07-02",
+    "review_date": "2025-07-22",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Action",
+    "rating": 8.8,
+    "review": "Jurassic World Rebirth is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through clean visual geography, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely excellent.\n\nWhat I admired most is the movie’s handling of tone. Jurassic World Rebirth knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Jurassic World Rebirth a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where muscular set pieces and forward momentum matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Jurassic World Rebirth is rich and often elegant, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 464
+  },
+  {
+    "title": "F1",
+    "release_date": "2025-06-27",
+    "review_date": "2025-08-22",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Action",
+    "rating": 8.4,
+    "review": "F1 is the kind of action picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a knack for escalation, through rhythm that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely rich.\n\nWhat I admired most is the movie’s handling of tone. F1 knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: production design keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives F1 a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where clean visual geography and forward momentum matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where a few on-the-nose passages, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. F1 is sharp and often thoughtful, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 458
+  },
+  {
+    "title": "How to Train Your Dragon",
+    "release_date": "2025-06-13",
+    "review_date": "2025-08-01",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Fantasy",
+    "rating": 8.3,
+    "review": "How to Train Your Dragon is the kind of fantasy picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through storybook strangeness, through framing that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely thoughtful.\n\nWhat I admired most is the movie’s handling of tone. How to Train Your Dragon knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: close-ups keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives How to Train Your Dragon a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where dream-logic imagery and ritual and symbol matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where an ending that reaches a little too hard, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. How to Train Your Dragon is excellent and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 475
+  },
+  {
+    "title": "Elio",
+    "release_date": "2025-06-20",
+    "review_date": "2025-07-13",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Animation",
     "rating": 9.0,
-    "date": "2021-01-08",
-    "year": 2021,
-    "review": "A very strong watch. The writing quietly sneaks up on you. It looks beautiful without becoming empty.",
-    "runtime": 95,
-    "tags": [
-      "Thriller",
-      "Mystery"
-    ]
+    "review": "Elio is the kind of animation picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through inventive world-building, through performance texture that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely absorbing.\n\nWhat I admired most is the movie’s handling of tone. Elio knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: editing keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives Elio a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where family feeling without sentimentality and visual wit matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where some familiar beats, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. Elio is thoughtful and often bracing, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 456
+  },
+  {
+    "title": "M3GAN 2.0",
+    "release_date": "2025-06-27",
+    "review_date": "2025-08-05",
+    "year": 2025,
+    "release_year": 2025,
+    "genre": "Horror",
+    "rating": 8.5,
+    "review": "M3GAN 2.0 is the kind of horror picture that reminds you how much control and taste still matter. What works first is the film’s sense of proportion: it never confuses noise for intensity, and it understands that attention is built shot by shot, scene by scene. Even before the plot fully locks in, the movie establishes an identity through a taste for unease over jump scares, through close-ups that feel purposeful rather than decorative, and through performances calibrated to register thought before explanation. That kind of discipline is often the difference between something merely competent and something genuinely impressive.\n\nWhat I admired most is the movie’s handling of tone. M3GAN 2.0 knows where its emotional center lives, but it does not rush toward it. Instead, it trusts accumulation. Small gestures repeat, private hesitations gather force, and details in the surrounding world start to feel like pressure points rather than background. In a lesser film, those details would exist only to signal “seriousness.” Here they shape the drama. The direction finds room for faces, pauses, and offhand behavior, which means the movie earns its larger turns rather than simply announcing them. There is also a welcome amount of visual intelligence in the way scenes are arranged: blocking keeps the eye active, and the use of space quietly tells you who holds power, who wants connection, and who is withdrawing from it.\n\nThe film’s ambitions are not abstract. It is interested in people navigating institutions, memory, desire, and performance, and it understands that those things rarely fit into neat speeches. That gives M3GAN 2.0 a tensile quality I found very satisfying. It can be funny without breaking mood, tender without becoming soft, and severe without freezing over. The craft is especially visible in the sound work and pacing. Moments are allowed to breathe just long enough to become unsettling or moving, and when the movie finally pushes into open emotion, it lands because the groundwork has been so carefully laid. This is where images that linger and unnerving sound design matter most: they turn the film from a collection of admirable scenes into something with a pulse.\n\nIt is not flawless. There are points where the occasional blunt line reading, and one or two ideas arrive more clearly than they need to. But those are minor costs next to how confident the overall construction feels. M3GAN 2.0 is rich and often assured, a movie that values texture over hype and precision over excess. More importantly, it leaves behind not just a plot summary or a talking point, but a mood, a moral vibration, and a distinct way of seeing. That is usually what separates a respectable release from a critic’s movie: the feeling that form and meaning are moving together. By that measure, this one more than succeeds.",
+    "word_count": 470
   }
 ];

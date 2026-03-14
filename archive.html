@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archive · The Late Screening</title>
+  <meta name="description" content="A static movie review site with a broad archive of modern and classic films.">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script defer src="./assets/app.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a href="./index.html" class="brand">The Late Screening<span>reviews, notes, and archive</span></a>
+        <nav class="nav-links">
+          <a href="./index.html" class="">Home</a>
+          <a href="./archive.html" class="active">Archive</a>
+          <a href="./about.html" class="">About</a>
+        </nav>
+      </div>
+    </header>
+    
+
+<main class="container section">
+  <div class="section-header">
+    <div>
+      <div class="kicker">Archive</div>
+      <h2>Every review</h2>
+      <p>Search by title or director, then narrow the list by genre, decade, or rating.</p>
+    </div>
+    <div class="pill" data-archive-count>0 reviews</div>
+  </div>
+  <div class="search-shell">
+    <input id="q" class="field" type="search" placeholder="Search title, director, or genre">
+    <select id="genre" class="field"><option value="">All genres</option></select>
+    <select id="decade" class="field"><option value="">All decades</option></select>
+    <select id="rating" class="field">
+      <option value="">Any rating</option>
+      <option value="4">4 stars and up</option>
+      <option value="3">3 stars and up</option>
+      <option value="2">2 stars and up</option>
+    </select>
+    <select id="sort" class="field">
+      <option value="newest-review">Newest review</option>
+      <option value="oldest-review">Oldest review</option>
+      <option value="rating">Highest rating</option>
+      <option value="title">Title A–Z</option>
+    </select>
+  </div>
+  <div class="archive-list" data-archive-results></div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>The Late Screening is a fictional independent film review site. Built as a fully static website in HTML, CSS, and JavaScript.</p>
+  </div>
+</footer>
+</body>
+</html>

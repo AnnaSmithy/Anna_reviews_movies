@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home · The Late Screening</title>
+  <meta name="description" content="A static movie review site with a broad archive of modern and classic films.">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script defer src="./assets/app.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a href="./index.html" class="brand">The Late Screening<span>reviews, notes, and archive</span></a>
+        <nav class="nav-links">
+          <a href="./index.html" class="active">Home</a>
+          <a href="./archive.html" class="">Archive</a>
+          <a href="./about.html" class="">About</a>
+        </nav>
+      </div>
+    </header>
+    
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="card hero-main">
+        <div class="kicker">Independent criticism</div>
+        <h1>Thoughtful reviews without the noise.</h1>
+        <p class="lead">A clean, searchable archive of film writing spanning recent releases and older titles, with every review focused on acting, direction, screenplay, pacing, cinematography, and music.</p>
+        <div class="cta-row">
+          <a class="button primary" href="./archive.html">Browse the archive</a>
+          <a class="button" href="./about.html">About the critic</a>
+        </div>
+      </div>
+      <aside class="card hero-side">
+        <div class="stat"><span class="muted">Total reviews</span><strong>207</strong></div>
+        <div class="stat"><span class="muted">Archive span</span><strong>2022–2025</strong></div>
+        <div class="stat"><span class="muted">Latest review</span><strong>Oct 30, 2025</strong></div>
+        <div class="stat"><span class="muted">Search & filters</span><strong>Genre, decade, rating</strong></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Recent reviews</h2>
+          <p>The newest writing from the front page.</p>
+        </div>
+        <a class="button" href="./archive.html">Open full archive</a>
+      </div>
+      <div class="grid" data-home-recent></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid">
+      <a class="card review-card" href="./archive.html">
+        <div class="kicker">Archive</div>
+        <h3>Search more than 207 reviews</h3>
+        <p class="muted">Filter by genre, decade, minimum rating, or title.</p>
+      </a>
+      <a class="card review-card" href="./about.html">
+        <div class="kicker">About</div>
+        <h3>Meet Mara Vale</h3>
+        <p class="muted">A fictional critic who writes the site with consistency, curiosity, and a slight distrust of empty hype.</p>
+      </a>
+      <article class="card review-card">
+        <div class="kicker">Editorial line</div>
+        <h3>Not every review is glowing</h3>
+        <p class="muted">The archive mixes praise, reservations, and the occasional outright pan.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>The Late Screening is a fictional independent film review site. Built as a fully static website in HTML, CSS, and JavaScript.</p>
+  </div>
+</footer>
+</body>
+</html>
